@@ -1,105 +1,99 @@
 class BookMyMovie{
 
-   String movies[] = {"Gaalipata" , "Om" , "A" , "Upendra" , "Raktha Kanniru" , "Yajamana" , "Suryavamshi" , "H2O" } ;
-   int noOfTickets ;
- static int ticketPrice = 600 ;
-   int totalNoOfTickets = 200 ;
-   int totalTicketPrice ;
-   
-   String snacks[] = {"chakli" , "wheels" , "sweet" , "mixture" , "lays", "coolDrinks"};
-   String snackName;
-   int snackQuantity;
-   int totalNoOfSnacks;
-static int snackPrice = 100 ;
-   int totalSnackPrice;
-   
-   
-   
-  public BookMyMovie(){
-	   System.out.println("BookMyMovie object is created");
-	   this.theatreName = theatreName;
-	   this.noOfTickets = noOfTickets;
-	   this.movieName = movieName;
-	   
-	   this.snackName = snackName;
-	   this.snackQuantity = snackQuantity;
-	   }
+     String movies[] ;
+	 String theaterName;
+	 int noOfTickets;
+	 static int ticketPrice = 400;
+	 int totalNoOfTickets;
+	 int totalTicketPrice;
 
- public void showTime(int noOfTickets , String bookedBy , String movieName ){
- int totalTicketPrice = 0 ;
-System.out.println("inside showTime method()..." );
-System.out.println("Arg 1 : no of tickets are" +noOfTickets);
-System.out.println("Arg 2: bookedBy" +bookedBy);
-System.out.println("Arg 3 : movieName is " +movieName);
+	 String snacks[];
+	 int noOfSnacks=120;
+	 static int snacksPrice=50;
+	 int snacksQuantity;
 
-  
-for (int index = 0 ; index < movies.length ; index++){
-if(movieName == movies[index]){
-System.out.println("movie name matched");
-
-if(noOfTickets < totalNoOfTickets){
-   
-   totalTicketPrice = noOfTickets*ticketPrice ;
-   noOfTickets = totalNoOfTickets - noOfTickets ;
-   System.out.println("for movie  : "  + movieName + "noOfTickets that are remaining :" + noOfTickets + "total price is" + totalTicketPrice);
- 
- 
- }
-else{
-System.out.println ("ist ticket illa");
-}
-
-
-}
-else {
- System.out.println("movie is not available");
-}
-return totalNoOfTickets;
-}
-public int (intervalTime(String snackName , int snackQuantity , int totalSnackPrice){
-int totalSnackPrice = 0 ;
-System.out.println("inside intervalTime()....");
-System.out.println("Arg 1 : the snack name is" + snackName);
-System.out.println("Arg 2 : the required snack quantity" + snackQuantity);
-System.out.println("Arg 3 : the total snacks price is" + totalSnackPrice );
-
-for  (int c = 0 ; c < snacks.length ; c++){
-	if(snackName == snacks[c]){
-		System.out.println("snack name matched");
-		
-		if(quantity<totalNoOfSnacks){
-			 totalSnackPrice = quantity * snackPrice;
-				totalNoOfSnacks=totalNoOfSnacks - quantity;
-		       System.out.println(" For snacks : "+ quantity + " snacks remaining "+ totalNoOfSnacks +" total price is " + totalSnackPrice );
-			
-			
-		}
-		else{
-			System.out.println ("ist snacks illa");
-		}
-		
+	public BookMyMovie(String theaterName, int totalNoOfTickets, String movies[],  String snacks[] )
+	{
+		this.theaterName = theaterName;
+		this.totalNoOfTickets = totalNoOfTickets;
+		this.movies = movies;
+		this.noOfSnacks = noOfSnacks;
+		this.snacks = snacks;
+		System.out.println("bookMyMovie object created");
 	}
-	
-	else{
-		System.out.println("snacks is not available");
-	}
-	return totalNoOfSnacks;
-}
-
-
-	
-	
-	
-}
 
 
 
 
+	 public int showTime(int noOfTickets, String bookedBy, String movieName)
+	 {
+		  int totalTicketPrice = 0;
+
+		  System.out.println("the showTime method started");
+		  System.out.println("The arg 1 "+ noOfTickets);
+		  System.out.println("The arg 3 "+ bookedBy);
+		  System.out.println("The arg 2 "+ movieName);
+
+	      for(int i = 0; i < movies.length;i++)
+		  {
+		      if(movieName == movies[i])
+			  {  
+			     System.out.println("the movie is matched");
+
+				 if(noOfTickets < totalNoOfTickets){
+			    totalTicketPrice = ticketPrice * noOfTickets ;
+                totalNoOfTickets = totalNoOfTickets - noOfTickets;
+                System.out.println("for the movie "+ movieName +" The price of the booked tickets "+ totalTicketPrice +" Total available tickets "+ totalNoOfTickets +" Booked by "+ bookedBy );				
 
 
 
+			  }
+
+		       else {
+			   System.out.println("The tickets are not available");
+
+			   }
+			  }
+		      else{
+			     System.out.println("The movie is not available");
+			  }
+
+		  }
 
 
+	   return totalTicketPrice;
 
-}
- }
+	 }
+
+
+      public int buySnacks(String snackName, int snacksQuantity,int seatNo){
+
+		  int totalSnacksPrice = 0;
+		  System.out.println("The snackTime method is started");
+		  System.out.println("The snacks name is  "+ snackName);
+		  System.out.println("The quantity of the snacks "+ snacksQuantity);
+		  System.out.println("the seat no is "+seatNo);
+
+
+		  for(int i=0; i < snacks.length; i++)
+		  {
+			  if(snackName == snacks[i]){
+				  System.out.println("the snack is matched ");
+				  if(snacksQuantity < noOfSnacks)
+				  {
+					  totalSnacksPrice =  snacksPrice * snacksQuantity;
+					  noOfSnacks = noOfSnacks - snacksQuantity;
+					  System.out.println("The Snacks name : "+ snackName +"The price of the snacks "+ totalSnacksPrice +" Total no of  snacks available in the shop "+ noOfSnacks);
+				  }
+				  else{
+					  System.out.println("Illa snacks illa");
+				  }
+			  }
+			  else{
+				  System.out.println("The snack is not available");
+			  }
+		  }
+		  return totalSnacksPrice;
+	  }
+
+}-
