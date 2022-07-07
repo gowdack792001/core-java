@@ -5,7 +5,7 @@ public static void main(String a[]){
 
 
 
-MusicPlayer m = new  MusicPlayer();
+MusicPlayerDTO m = new  MusicPlayerDTO();
 
 			m.setname("JBL");
 			m.setplayerType("record player");
