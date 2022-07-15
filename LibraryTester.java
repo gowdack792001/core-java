@@ -55,11 +55,16 @@ public static void main (String a[]){
 		int existingId  = sc.nextInt();
 		
 	System.out.println("enter the price has to be updated");
-		int updatedPrice = sc.nextIntLine();
+		int updatedPrice = sc.nextInt Line();
 		
 	lib.updateBookPriceById(existingId , updatedPrice);
 	
 	lib.getBookDetails();
+	System.out.println("enter the name of the book which has to be deleted");
+		String existingName1 = sc.next();
+	hos.bookByName(existingName1);
+		hos.getPatientDetails();
+	
 	
 	
 	

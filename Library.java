@@ -55,7 +55,7 @@ class Library{
 			if(dtos[i].getId() == id){
 				
 				dtos[i].setPrice(price);
-				updatedPrice = true;
+				updatedBookPrice = true;
 			}
 			else{
 				
@@ -64,13 +64,32 @@ class Library{
 		}
 		
 		
-		return updatedPrice;
+		return updateBookPrice;
 		
 		
 		
 		
 		
 	}
+	
+	public boolean deleteBookByName(String name){
+				boolean bookDeleted = false;
+			System.out.println("inside book patient");
+				
+			for(int i=0 ,j = 0; j<dtos.length;j++){
+				
+				if (!dtos[j].getName().equals(name)){
+					//dtos[i] = null;
+					dtos[i++] = dtos[j];
+					//bookDeleted =  true;
+					
+				}
+			dtos =	Arrays.copyOf(dtos , i);
+			}
+			
+			return bookDeleted;
+			
+		}
 
 
 

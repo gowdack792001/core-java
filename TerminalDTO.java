@@ -43,4 +43,6 @@ public class TerminalDTO {
 	    this.noOfCheckIncounters = noOfCheckIncounters;
 	 }
 	
+
+
 }
