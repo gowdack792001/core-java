@@ -32,26 +32,64 @@ class HotelTester{
 		 
 		 
 		 }
+		 		 			String option = null;
+							
+			do{
+				System.out.println("enter 1 to getFoodItemDetails");
+				System.out.println("enter 2 to updatePriceByName");
+			    System.out.println("enter 3 to deleteByName");
+				System.out.println("enter 4 to deleteById ");
+
+					int choice = sc.nextInt();
+					
+				switch(choice){
+					
+					case 1 : 		 hotel.getFoodItemDetails();
+
+					break ;
+					
+					case 2 :  System.out.println("Enter the existing Name to update the price");
+								String existingName = sc.next();
+								System.out.println("Enter price to be update");
+								int updatePrice = sc.nextInt();
+								hotel.updatePriceByName(existingName, updatePrice);
+									break ;
+				
+					case 3 :
+					
+						 System.out.println("Enter the name to be deleted");
+						String name1 = sc.next();
+						hotel.deleteByName(name1);
+									break ;
+
+					case 4 : 
+					
+								System.out.println("enter the id to be deleted");
+								int id1 = sc.nextInt();
+								hotel.deleteById(id1);
+									break ;
+ 
+ 
+				
+				
+					default : System.out.println("given choise cannot be deleivered");
+					break ;
+	}
+		System.out.println("do you want to continue yes/no");
+		
+		 option = sc.next();		
+				
+				
+				
+
+			}while(option.equals("yes"));
+
 		 
-		 hotel.getFoodItemDetails();
+		 
 	     
-		 /*System.out.println("Enter the existing Name to update the price");
-		 String existingName = sc.next();
-		 System.out.println("Enter price to be update");
-		 int updatePrice = sc.nextInt();
-		 hotel.updatePriceByName(existingName, updatePrice);
-		 
-		 hotel.getFoodItemDetails();*/
+		
 		 
 		 
-		 System.out.println("Enter the name to be deleted");
-		 String name1 = sc.next();
-		 hotel.deleteByName(name1);
-		 hotel.getFoodItemDetails();
-		 System.out.println("enter the id to be deleted");
-		 int id1 = sc.nextInt();
-		 hotel.deleteById(id1);
-		 hotel.getFoodItemDetails();
 	  }
 
 

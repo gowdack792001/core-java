@@ -6,7 +6,7 @@ class OrderDTO{
 	                                                      
 		private int id;                                   
 		private String name;                                    
-		//private int OrderNo;           
+		private int OrderNo;           
 		private int price;
 		
 		
@@ -28,7 +28,7 @@ class OrderDTO{
 	public void setName(String name){
 	this.name = name;
 	}
-	  /* public int getOrderNo(){
+	 /* public int getOrderNo(){
 		return orderNo;
 		}
 		

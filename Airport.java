@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class Airport{
 
 
@@ -38,20 +39,78 @@ class Airport{
 		 }
 	     
 	}
+	
+	 public boolean updateLoadingBridgeById(int id, int noOfLoadingBridges){
+		 
+		 System.out.println("Inside updateLoadingBridgeById ");
+		 boolean updateNoOfLoadingBridge = false;
+		 for(int i=0; i<terminals.length;i++){
+			 if(terminals[i].getId() == id ){
+				 terminals[i].setNoOfLoadingBridges(noOfLoadingBridges);
+				 updateNoOfLoadingBridge = true;
+				 
+			 }
+			 else{
+				 System.out.println("The terminal id is not found");
+			 }
+		 }
+		 return updateNoOfLoadingBridge;
+	 }
+	 
+	 public boolean updateNoOfCheckInCoountersByName(String name, int noOfCheckIncounters){
+		 
+		 System.out.println("Inside updatePatientContactNoByName ");
+		 boolean updateCheckInCounters = false;
+		 for(int i=0; i<terminals.length;i++){
+			 if(terminals[i].getName().equals(name)){
+				 terminals[i].setNoOfCheckinCounters(noOfCheckIncounters);
+				 updateCheckInCounters = true;
+				 
+			 }
+			 else{
+				 System.out.println("The terminal name is not found");
+			 }
+		 }
+		 return updateCheckInCounters;
+	 }
+	 
+	 public boolean deleteTerminalsByName(String name){
+		 System.out.println("inside deleteTerminalsByName");
+		 boolean terminalDeleted = false;
+		 int i,j;
+		 for(i=0,j=0; j<terminals.length;j++){
+			 if(!terminals[j].getName().equals(name)){
+				 terminals[i++]=terminals[j];
+				 terminalDeleted=true;
+			 }
+			 else{
+				 System.out.println("The terminal is not found");
+			 }
+		 }
+		 terminals = Arrays.copyOf(terminals, i);
+		 return terminalDeleted;
+		 
+	 }
+	 
+	 public boolean deleteTerminalsById(int id){
+		 System.out.println("Inside deleteTerminalsById");
+		 boolean terminalDeleted=false;
+		 int i,j;
+		 for(i=0,j=0;j<terminals.length;j++){
+			 if(terminals[j].getId()!=id){
+				 terminals[i++]=terminals[j];
+				 terminalDeleted=true;
+			 }
+			 else{
+				 System.out.println("the termial id not found");
+			 }
+		 }
+		 terminals = Arrays.copyOf(terminals, i);
+		 return terminalDeleted;
+	 }
+	 
 
-    public boolean updateTerminalNameById(){
-		System.out.println("Inside updateTerminalNameById()");
-		boolean updateName = false;
-		for(int i=0; i<terminals.length){
-			if(terminals[i].getId == id){
-				terminals.setName(name);
-			  updateName	= true;
-			}
-			else{
-				
-			}
-		}
-		return updateName;
-	}
+
+
 
 }

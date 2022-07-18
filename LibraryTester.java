@@ -46,70 +46,87 @@ public static void main (String a[]){
 	
 	lib.searchBook(dto);
 	}
-	
-	
-	lib.getBookDetails();
-	
-	System.out.println("enter the id for whivh the price has to be updated");
-	
-		int existingId  = sc.nextInt();
+	  String option = null;
+				
+			do{
+				System.out.println("enter 1 to getBookDetails");
+					System.out.println("enter 2 to UpdateBookPriceById");
+			    System.out.println("enter 3 to UpdateBookPriceByName");
+					System.out.println("enter 4 to deleteBookById ");
+				System.out.println("enter 5 to deleteBookByName ");
+
+					int choice = sc.nextInt();
+					
+				switch(choice){
+					
+					case 1 : 	lib.getBookDetails();
+
+
+					break ;
+					
+					case 2 :  
+								System.out.println("enter the id for whivh the price has to be updated");
+								
+									int existingId1  = sc.nextInt();
+									
+								System.out.println("enter the price has to be updated");
+									int updatedPrice = sc.nextInt();
+									
+								lib.UpdateBookPriceById(existingId1 , updatedPrice);
+									break ;
+				
+					case 3 :
+					
+						 
+								 System.out.println("enter the name of the book whuch price has to be updated");
+								  String existingName2 = sc.next();
+								 System.out.println("enter the updated price");
+									int updatedPrice1 = sc.nextInt();
+								lib.UpdateBookPriceByName(existingName2 , updatedPrice1);
+									break ;
+
+					case 4 : 
+					
+							 System.out.println("enter the name of the book which has to be deleted");
+							int existingId2 = sc.nextInt();
+							lib.deleteBookById(existingId2);
+									break ;
+ 
+ 
+					case 5 : 
+								System.out.println("enter the name of the book which has to be deleted");
+								String existingName1 = sc.next();
+								lib.deleteBookByName(existingName1);			
+								break ;
+				
+				
+					default : System.out.println("given choise cannot be deleivered");
+					break ;
+	}
+		System.out.println("do you want to continue yes/no");
 		
-	System.out.println("enter the price has to be updated");
-		int updatedPrice = sc.nextInt Line();
-		
-	lib.updateBookPriceById(existingId , updatedPrice);
-	
-	lib.getBookDetails();
-	System.out.println("enter the name of the book which has to be deleted");
-		String existingName1 = sc.next();
-	hos.bookByName(existingName1);
-		hos.getPatientDetails();
-	
-	
-	
-	
-	
-	
-	
+		 option = sc.next();		
+				
+				
+				
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			}while(option.equals("yes"));
 	
 	
 	
 	
 	
 	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   }
 
 
 

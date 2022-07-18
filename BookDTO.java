@@ -4,10 +4,10 @@ class BookDTO{
 	public BookDTO(){
 		System.out.println("the book details are");
 	}
-	
-		private int id;
-		private String name;
-		private String authorName;
+	                                                      
+		private int id;                                   
+		private String name;                                    
+		private String authorName;           
 		private int price;
 		
 		

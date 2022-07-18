@@ -1,3 +1,6 @@
+import java.util.Arrays;
+
+
 class Library{
 
 
@@ -49,6 +52,7 @@ class Library{
 	public boolean UpdateBookPriceById(int id , int price){
 		
 		System.out.println("inside the updatbook peice by id");
+		boolean updatedBookPrice = false;
 		
 		for(int i = 0; i<dtos.length; i++){
 			
@@ -64,7 +68,7 @@ class Library{
 		}
 		
 		
-		return updateBookPrice;
+		return updatedBookPrice;
 		
 		
 		
@@ -72,7 +76,55 @@ class Library{
 		
 	}
 	
-	public boolean deleteBookByName(String name){
+	public boolean UpdateBookPriceByName(String name , int price){
+		
+		System.out.println("inside the updatbook peice by id");
+		boolean updatedBookPrice = false;
+		
+		for(int i = 0; i<dtos.length; i++){
+			
+			if(dtos[i].getName().equals(name)){
+				
+				dtos[i].setPrice(price);
+				updatedBookPrice = true;
+			}
+			else{
+				
+				System.out.println("the entered id is wrong");
+			}
+		}
+		
+		
+		return updatedBookPrice;
+		
+		
+		
+		
+		
+	}
+	
+	public boolean deleteBookById(int id){
+				boolean bookDeleted = false;
+			System.out.println("inside book patient");
+				
+			for(int i=0 ,j = 0; j<dtos.length;j++){
+				
+				if (dtos[j].getId() != id){
+					//dtos[i] = null;
+					dtos[i++] = dtos[j];
+					//bookDeleted =  true;
+					
+				}
+			dtos =	Arrays.copyOf(dtos , i);
+			}
+			
+			return bookDeleted;
+			
+		}
+	
+	
+	
+      public boolean deleteBookByName(String name){
 				boolean bookDeleted = false;
 			System.out.println("inside book patient");
 				

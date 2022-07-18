@@ -58,8 +58,8 @@ class CustomerTester{
 	
 	System.out.println("enter the name of the order which has to be deleted");
 		String existingName1 = sc.next();
-	hos.bookByName(existingName1);
-		hos.getPatientDetails();
+	cust.deleteOrderByName(existingName1);
+		cust.getOrderDetails();
 	
 
 
